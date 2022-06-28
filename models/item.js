@@ -2,12 +2,9 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const bidSchema = new Schema({
-    Content: Number,
-    Posted: {
+    price: {
         type: Number,
-        default: function() {
-            return new Date().getFullYear()
-        },
+        required: true,
     },
     user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     userName: String,
@@ -21,16 +18,13 @@ const itemSchema = new Schema({
         type: String,
         required: true,
     },
-    posted: {
-        type: Number,
-        default: function() {
-            return new Date().getFullYear()
-        },
+    description: {
+        type: String
     },
-    bids: [bidSchema],
-    user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
-    userName: String,
-    userAvatar: String
+    posted: {
+        type: Date,
+    },
+    bids: [bidSchema]
 }, {
     timestamps: true 
 })

@@ -5,15 +5,14 @@
       <tr>
         <th>Posted</th>
         <th>Title</th>
-        <th>Price</th>
+        <th>Highest Bid</th>
       </tr>
     </thead>
     <tbody>
       <% items.forEach(function(i) { %>
         <tr>
+          <td><%= i.createdAt %></td>
           <td><%= i.title %></td>
-          <td><%= i.releaseYear %></td>
-          <td><%= i.posted %></td>
           <td><a href="/items/<%= i._id %>">DETAILS</a></td>
         </tr>
         <% }); %>

@@ -3,6 +3,7 @@ var router = express.Router();
 var itemsCtrl = require('../controllers/items');
 
 router.get('/', itemsCtrl.index);
-router.get('/new', itemsCtrl.new)
+router.get('/new', itemsCtrl.new);
+router.post('/', itemsCtrl.create);
 
 module.exports = router;
