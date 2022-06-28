@@ -4,6 +4,7 @@ module.exports = {
     index,
     new: newPost,
     create,
+    show,
 };
 
 function index(req, res) {
@@ -29,4 +30,10 @@ function create(req, res) {
     }
     res.redirect('/items');
   });
+}
+
+function show(req, res) {
+  Item.findById(req.params.id, function(err, item) {
+    res.render('items/show', {title: 'Item Details', item})
+  })
 }
