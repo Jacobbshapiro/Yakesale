@@ -2,6 +2,7 @@ const Item = require('../models/item');
 
 module.exports = {
     create,
+    delete: deleteBid
 }
 
 function create(req, res) {
@@ -15,4 +16,16 @@ function create(req, res) {
             res.redirect(`/items/${item._id}`)
         })
     })
+}
+
+async function deleteBid(req, res, next) {
+    try{
+        const item = await Item.findOne({ 'bids._id': req.params.id, 'bids.user': req.user._id})
+        if(!item) return res.redirect('/items')
+        item.bids.remove(req.params.id)
+        await item.save()
+        res.redirect(`/items/${item._id}`)
+    } catch(err) {
+        return next(err)
+    }
 }

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const bidSchema = new Schema({
-    price: {
+    content: {
         type: Number,
         required: true,
     },
