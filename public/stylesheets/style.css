@@ -16,7 +16,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #E8ECEB;
   display: flex;
   justify-content: flex-end;
   padding: 0 20px 0 30px;
@@ -66,8 +66,7 @@ nav > a.active {
 }
 
 #new-form *,
-#add-review-form *,
-#add-performer-form * {
+#add-bid-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
@@ -119,16 +118,14 @@ table td {
   font-weight: bold;
 }
 
-#add-review-form,
-#add-performer-form {
+#add-bid-form {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
 
-#add-review-form input[type="submit"],
-#add-performer-form input[type="submit"]  {
+#add-bid-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -176,13 +173,13 @@ li {
   height: 30px;
 }
 
-.review-user {
+.bid-user {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.review-user img {
+.bid-user img {
   border-radius: 50%;
   height: 40px;
 }
