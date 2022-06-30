@@ -47,15 +47,7 @@ function edit(req, res) {
 )}
 
 function update (req, res) {
-  Item.findByIdAndUpdate(
-    req.query.id,
-    req.body,
-    {
-    update: true,
-    },  
-    (err, item) => {
-      console.log(req.body)
-      res.redirect(`/items/${req.params.id}`)
-    }
-  )
+  Item.findByIdAndUpdate(req.params.id, req.body, function(err) {
+    res.redirect(`/items/${req.params.id}`)
+  })
 }
