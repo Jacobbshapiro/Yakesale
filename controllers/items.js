@@ -5,6 +5,8 @@ module.exports = {
     new: newPost,
     create,
     show,
+    edit,
+    update
 };
 
 function index(req, res) {
@@ -36,4 +38,24 @@ function show(req, res) {
   Item.findById(req.params.id, function(err, item) {
     res.render('items/show', {title: 'Item Details', item})
   })
+}
+
+function edit(req, res) {
+  Item.findById(req.params.id, function(err, item) {
+    res.render ('items/edit', {title: "Edit Item Details", item}
+  )}
+)}
+
+function update (req, res) {
+  Item.findByIdAndUpdate(
+    req.query.id,
+    req.body,
+    {
+    update: true,
+    },  
+    (err, item) => {
+      console.log(req.body)
+      res.redirect(`/items/${req.params.id}`)
+    }
+  )
 }

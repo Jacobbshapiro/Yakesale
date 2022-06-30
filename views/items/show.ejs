@@ -8,6 +8,7 @@
   <div>Description: </div>
   <div><%= item.description %></div>
 </section>
+<a href="/items/<%= item.id %>/edit">Edit</a>
 <br><br><h2>Bids</h2>
 <% if (user) { %>
   <form id="add-bid-form" method="POST" action="/items/<%= item._id %>/bids">
