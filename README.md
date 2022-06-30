@@ -4,7 +4,7 @@
 
 # Auction Service
 https://yakesale.herokuapp.com/items
-https://trello.com/b/xHsN1hRT/ebay-project-2
+<br>https://trello.com/b/xHsN1hRT/ebay-project-2
 Yakesale is an express CRUD full stack web application that lets user post items up for auction and bid.
 ## Technologies Used
 Node.js, Bootstrap, Mongoose, Mongodb, Mongo Atlas, and express
