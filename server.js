@@ -5,11 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
+const methodOverride = require('method-override');
 
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
-const methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var itemRouter = require('./routes/item');
