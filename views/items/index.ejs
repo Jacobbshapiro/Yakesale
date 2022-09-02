@@ -5,7 +5,6 @@
       <tr>
         <th>Posted</th>
         <th>Title</th>
-        <th>Highest Bid</th>
         <th></th>
       </tr>
     </thead>
@@ -14,7 +13,6 @@
         <tr>
           <td><%= i.createdAt %></td>
           <td><%= i.title %></td>
-          <td><%= i.highestBid %></td>
           <td><a href="/items/<%= i._id %>">DETAILS</a></td>
         </tr>
         <% }); %>
